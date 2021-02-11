@@ -11,7 +11,7 @@ minsRef.textContent = '00';
 secsRef.textContent = '00';
 
 class CountdownTimer{
-    constructor(selector, targetDate ) {
+    constructor({ selector, targetDate } ) {
         this.selector = selector;
         this.targetDate = targetDate;
     }
@@ -59,5 +59,10 @@ class CountdownTimer{
     }
 };
 
-const timer = new CountdownTimer(1, new Date('Jul 17 2021 16:33:00')).startCountdown();
 
+const timer = new CountdownTimer({
+  selector: '#timer-1',
+  targetDate: new Date('Jul 17, 2021'),
+});
+
+timer.startCountdown();
